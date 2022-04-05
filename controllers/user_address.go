@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/hafnisulun/apate-api/middlewares"
@@ -43,8 +42,6 @@ func (r UserAddressController) FindAll(c *gin.Context) {
 	defer res.Body.Close()
 	var userAddressesResponseBody models.UserAddressesResponseBody
 	json.NewDecoder(res.Body).Decode(&userAddressesResponseBody)
-
-	time.Sleep(3 * time.Second)
 
 	// Send response
 	c.JSON(http.StatusOK, userAddressesResponseBody)
