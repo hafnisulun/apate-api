@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/hafnisulun/apate-api/middlewares"
@@ -19,7 +18,6 @@ type UserController struct{}
 // POST /users
 // Register user
 func (r UserController) Register(c *gin.Context) {
-	time.Sleep(3 * time.Second)
 	// Bind input
 	var input models.CreateUserInput
 	if err := c.ShouldBindJSON(&input); err != nil {
