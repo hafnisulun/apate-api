@@ -7,6 +7,7 @@ type Merchant struct {
 	Name        string    `json:"name"`
 	Lat         float64   `json:"lat"`
 	Lon         float64   `json:"lon"`
+	Phone       string    `json:"phone"`
 	Image       string    `json:"image"`
 	ClusterUUID uuid.UUID `json:"cluster_uuid"`
 }
@@ -24,6 +25,7 @@ type CreateMerchantInput struct {
 	Name        string    `json:"name" binding:"required"`
 	Lat         float64   `json:"lat" binding:"required"`
 	Lon         float64   `json:"lon" binding:"required"`
+	Phone       string    `json:"phone"`
 	ClusterUUID uuid.UUID `json:"cluster_uuid" binding:"required"`
 }
 
